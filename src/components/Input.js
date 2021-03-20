@@ -10,7 +10,6 @@ const Input = styled.input`
     margin:5px;
 `
 
-
 function ShowInput(props){
     const [texto, setTexto] = React.useState('');
 
@@ -19,16 +18,11 @@ function ShowInput(props){
     }
 
     function handleKeyUp(event){
-        // console.log(event.keyCode) 
-        if(event.keyCode === 13){
+        if(event.keyCode === 13 && texto !== ""){
             props.comunicacao(texto)  
             setTexto('')          
         }
     }
-
-    // React.useEffect(() => {
-    //     props.comunicacao(texto)
-    // }, [texto])
 
     return(<>
         <Input 
